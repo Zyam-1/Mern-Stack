@@ -1,0 +1,22 @@
+div {
+    border:2px solid seagreen;
+    padding: 5px;
+}
+#main-cont{
+    overflow: hidden;
+}
+#First {
+    width:30%;
+    float: left;
+    overflow: hidden;
+}
+#Third{
+    width: 30%;
+    float:left;
+    background-color: green;
+    overflow: hidden;
+
+}
+img {
+    float: right;
+}
