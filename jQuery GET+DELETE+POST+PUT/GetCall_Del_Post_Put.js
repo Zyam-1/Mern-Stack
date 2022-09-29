@@ -3,6 +3,23 @@ $(function(){
     $("#cont").on("click", ".btn-danger", handleDelete);
     $("#addRec").click(AddRecipe);
     $("#cont").on("click", ".btn-secondary", handleUpdate);
+    $("#UpdateBtn").click(function(){
+        var updatedTitle = $("#UpdateTitle").val();
+        var updatedBody = $("#UpdateBody").val();
+        var id_3 = $("#id").val();
+        console.log(updatedBody)
+        $.ajax({
+            url : "https://usman-recipes.herokuapp.com/api/recipes/" + id_3,
+            method : "PUT",
+            data: {title : updatedTitle, body : updatedBody},
+            success :  function(response){
+                loadRecipes()
+                $("#modelId").modal("hide");
+
+            }
+        })
+    })
+    
 });
 
 function handleUpdate(){
@@ -10,9 +27,11 @@ function handleUpdate(){
     var UptBtn = $(this);
     var ParentDiv = UptBtn.closest(".border");
     var id_2 = ParentDiv.attr("data-id");
-    console.log(id_2);
+    
     $.get("https://usman-recipes.herokuapp.com/api/recipes/" + id_2, function(response){
-        console.log(response);
+        $("#UpdateTitle").val(response.title);
+        $("#UpdateBody").val(response.body);
+        $("#id").val(response._id);
 
     })
     
