@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Product List</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src = "./crud.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class = "container">
+    <h1>Product List</h1>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#AddProductmodel">
+      Add Product
+    </button>
+    
+    <!-- Add Modal -->
+    <div class="modal fade" id="AddProductmodel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Product Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <!--Name-->
+                    
+                    <div class="form-group">
+                      <label for="NewName">Name</label>
+                      <input type="text"
+                        class="form-control" name="NewName" id="NewName" aria-describedby="helpId" placeholder="Enter Name">
+                      
+                    </div>
+
+                    <!--Price-->
+                    <div class="form-group">
+                        <label for="NewPrice">Price</label>
+                        <input type="number"
+                          class="form-control" name="NewPrice" id="NewPrice" aria-describedby="helpId" placeholder="Enter Price">
+                    </div>
+
+                    <!--Color-->
+
+
+                    <div class="form-group">
+                        <label for="NewColor">Color</label>
+                        <input type="text"
+                          class="form-control" name="NewColor" id="NewColor" aria-describedby="helpId" placeholder="Enter Color">
+                    </div>
+
+
+
+                    <!--Department-->
+
+                    <div class="form-group">
+                        <label for="NewDep">Department</label>
+                        <input type="text"
+                          class="form-control" name="NewDep" id="NewDep" aria-describedby="helpId" placeholder="Enter Department">
+                        
+                    </div>
+
+
+
+                    <!--Description-->
+                    <div class="form-group">
+                        <label for="NewDescription">Description</label>
+                        <input type="text"
+                          class="form-control" name="NewDescription" id="NewDescription" aria-describedby="helpId" placeholder="Enter Description">
+                    </div>
+
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id = "AddPro" class="btn btn-primary">Enter Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id = "main-cont">Loading...</div>
+
+    
+   
+    
+    <!-- Edit Modal -->
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+
+            <!--Pro Name-->
+            <div class="form-group">
+              <label for="UpdateName">Name</label>
+              <input type="text"
+                class="form-control" name="UpdateName" id="UpdateName" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Help text</small>
+            </div>
+
+              
+            <!-- Pro price-->
+            <div class="form-group">
+              <label for="UpdatePrice">Price</label>
+              <input type="text"
+                class="form-control" name="UpdaterPrice" id="UpdatePrice" aria-describedby="helpId" placeholder="">
+            </div>
+
+            <!--Pro color-->
+            <div class="form-group">
+              <label for="UpdateColor">Color</label>
+              <input type="text"
+                class="form-control" name="UpdateColor" id="UpdateColor" aria-describedby="helpId" placeholder="">
+              
+            </div>
+
+            
+            <!--Pro Dep-->
+            <div class="form-group">
+              <label for="UpdateDep">Department</label>
+              <input type="text"
+                class="form-control" name="UpdateDep" id="UpdateDep" aria-describedby="helpId" placeholder="">
+            </div>
+
+
+              <!--Pro Descrip-->
+
+              <div class="form-group">
+                <label for="UpdateDescr">Description</label>
+                <textarea class="form-control" name="UpdateDescr" id="UpdateDescr" rows="2"></textarea>
+              </div>
+            
+
+
+                 
+
+          
+          
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+   
+  </body>
+</html>
