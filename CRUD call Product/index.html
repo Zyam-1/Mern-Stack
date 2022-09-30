@@ -109,7 +109,6 @@
               <label for="UpdateName">Name</label>
               <input type="text"
                 class="form-control" name="UpdateName" id="UpdateName" aria-describedby="helpId" placeholder="">
-              <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
 
               
@@ -141,8 +140,18 @@
 
               <div class="form-group">
                 <label for="UpdateDescr">Description</label>
-                <textarea class="form-control" name="UpdateDescr" id="UpdateDescr" rows="2"></textarea>
+                <textarea class="form-control" name="UpdateDescr" id="UpdateDescr" rows="4"></textarea>
               </div>
+              
+
+              <!--Pro-id-Hidden-->
+
+              <div class="form-group">
+                <label for="id-2"></label>
+                <input type = "hidden" class="form-control" name="id-2" id="id-2" ></input>
+              </div>
+
+
             
 
 
@@ -153,7 +162,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-primary" id = "UpdProduct">Update Product</button>
           </div>
         </div>
       </div>

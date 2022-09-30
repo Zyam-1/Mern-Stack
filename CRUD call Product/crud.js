@@ -3,13 +3,27 @@ $(function(){
     $("#AddPro").click(AddProduct);
     $("#main-cont").on("click", "#DelBtn", handleDel);
     $("#main-cont").on("click", "#EditBtn", handleEdit);
+    $("#UpdProduct").click(function(){
+        var UpdatedName = $("#UpdateName").val();
+        var UpdatedPrice = $("#UpdatePrice").val();
+        var UpdatedColor = $("#UpdateColor").val();
+        var UpdatedDep = $("#UpdateDep").val();
+        var UpdatedDescr = $("#UpdateDescr").val();
+        var UpdatedId =  $("#id-2").val();
+
+
+        $.ajax({                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+        })
+
+    })
 
 
 })
 
 function handleEdit(){
     $("#EditModal").modal("show");
-    var EditBtn = $("this");
+    var EditBtn = $(this);
     var ParentDiv = EditBtn.closest(".border");
     var id = ParentDiv.attr("data-id");
     $.ajax ({
@@ -18,11 +32,13 @@ function handleEdit(){
         success: function(response){
 
             console.log(response)
-            // $("#UpdateName").val = response.name;
-            // $("#UpdatePrice").val = response.price;
-            // $("#UpdateColor").val = response.color;
-            // $("#UpdateDep").val = response.department;
-            // $("#UpdateDescr").val = response.description;
+             $("#UpdateName").val(response.name);
+             $("#UpdatePrice").val(response.price);
+             $("#UpdateColor").val(response.color);
+             $("#UpdateDep").val(response.department);
+             $("#UpdateDescr").val(response.description);
+             $("#id-2").val(response._id);
+
              loadRecipes()
             
         }
