@@ -1,6 +1,7 @@
-const sum = require("./sum");
+const add = require("./sum");
 const prod = require("./product");
+const sub = require("./subtract")
 
-const calcfuncs = {addition: sum, multiplication: prod};
+const calcfuncs = {add, prod, sub};
 
 module.exports = calcfuncs;
