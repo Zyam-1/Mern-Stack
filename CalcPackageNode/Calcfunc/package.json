@@ -1,0 +1,14 @@
+{
+  "name": "zyam-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exportFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Calculator"
+  ],
+  "author": "Zyam",
+  "license": "ISC"
+}

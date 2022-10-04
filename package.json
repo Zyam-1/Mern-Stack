@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.21",
+    "zyam-calc": "^1.0.0"
   }
 }
