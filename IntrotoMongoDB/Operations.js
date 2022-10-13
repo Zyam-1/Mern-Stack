@@ -15,7 +15,7 @@ const createProduct = async (name, price, tags) => {
  }
 
  const readProd = async ()=>{
-  let products = await ProductModel.find();
+  let products = await ProductModel.find().sort({name:1}).limit(2);
   console.log(products);
  }
 

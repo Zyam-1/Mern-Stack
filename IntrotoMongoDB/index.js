@@ -15,8 +15,8 @@ mongoose
     console.log("Connection to MongoDB created");
     // await createProduct ('Dell', 299,['Laptop', 'Black'] );
     // await delProd("634535cc7c87faf76d8ea2c8");
-    // await readProd();
-    await updatePord("634535a0f07b7333f8addbab", "HP updated", 299, ["Laptop, 6th Generation"])
+     await readProd();
+    // await updatePord("634535a0f07b7333f8addbab", "HP updated", 299, ["Laptop, 6th Generation"])
     
   })
 
