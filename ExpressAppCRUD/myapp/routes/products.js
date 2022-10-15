@@ -1,6 +1,5 @@
 console.clear()
 var express = require('express');
-const prod = require('zyam-calc/product');
 var router = express.Router();
 var productModel = require("../models/productSchema")
 
@@ -16,11 +15,38 @@ router.get('/add', async function(req, res, next) {
 }
     );
 
-    router.post('/add', async function(req, res, next) {
-        console.log(res.body)
-        res.render("products/add")
+router.post("/add", async function(req, res, next) {
+        let product = new productModel(req.body)
+        await product.save()
+        res.redirect("/products")
+
     }
         );
+
+
+router.get("/delete/:id", async function(req, res, next) {
+            let product = await productModel.findByIdAndDelete(req.params.id)
+            res.redirect("/products")
+    
+        }
+            );
+
+            router.get("/edit/:id", async function(req, res, next) {
+                let product = await productModel.findById(req.params.id)
+                res.render("products/edit", { product })
+            }
+                );
+
+                router.post("/edit/:id", async function(req, res, next) {
+                    let product = await productModel.findById(req.params.id)
+                    product.name = req.body.name
+                    product.price= req.body.price
+                    await product.save()
+                    res.redirect("/products")
+                }
+                    );
+
+
     
 
 

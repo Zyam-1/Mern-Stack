@@ -13,8 +13,15 @@ block content
             tr 
                 th Name 
                 th Price
+                th Actions
         tbody
             each product in productList
                 tr
                     td=product.name 
-                    td=product.price
+                    td="Rs "+product.price
+                    td
+                        a(href="/products/delete/"+product._id class = "btn btn-danger") Delete
+                        
+                        a(href="/products/edit/"+product._id class = "btn btn-info") Edit 
+
+
