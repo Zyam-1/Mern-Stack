@@ -1,10 +1,13 @@
 var createError = require('http-errors');
 var express = require('express');
+const mongoose = require("mongoose")
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -21,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,5 +41,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+mongoose.connect("mongodb://localhost/CRUD", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  family:4
+}).then(()=>{
+  console.log("Connection is successful")
+}).catch(err=>{
+  console.log("connection failed")
+})
 
 module.exports = app;
