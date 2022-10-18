@@ -14,7 +14,8 @@ router.get('/ShoppingCart', function(req, res, next) {
 
 router.get('/ShoppingCart/delete/:id', function(req, res, next) {
   let cart = [];
-  if(req.cookies.cart) cart = req.cookies.cart;
+  if(req.cookies.cart) 
+    cart = req.cookies.cart;
   cart.splice(cart.findIndex(c=>{c._id == req.params.id}), 1)
   res.cookie("cart", cart);
   res.redirect("/ShoppingCart")
