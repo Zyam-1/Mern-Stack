@@ -28,7 +28,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge: 60000 }
 }))
-app.use(sessionsAuth)
+app.use(sessionsAuth);
 
 
 app.use('/', indexRouter);

@@ -2,6 +2,7 @@ console.clear();
 var express = require("express");
 var router = express.Router();
 var productModel = require("../models/productSchema");
+var addCheckAuth = require("../middlewares/addCheckAuth")
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
@@ -9,11 +10,11 @@ router.get("/", async function (req, res, next) {
   res.render("products/list", { title: "Products", productList: products });
 });
 
-router.get("/add", async function (req, res, next) {
+router.get("/add", addCheckAuth, async function (req, res, next) {
   res.render("products/add");
 });
 
-router.post("/add", async function (req, res, next) {
+router.post("/add",  async function (req, res, next) {
   let product = new productModel(req.body);
   await product.save();
   res.redirect("/products");
