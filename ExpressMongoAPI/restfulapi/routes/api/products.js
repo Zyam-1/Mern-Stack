@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     let Product = await product.findById(req.params.id);
-    res.send(Product);
     if (!Product) return res.send("Product not available");
     else res.send(Product);
   } catch (err) {
@@ -21,4 +20,35 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//this will delete a record
+
+router.delete("/:id", async (req,res)=>{
+  let Product = await product.findByIdAndDelete(req.params.id);
+  res.send(Product);
+});
+
+
+//this will update a single record
+
+router.put("/:id", async (req, res)=>{
+  let Product = await product.findByIdAndUpdate(req.params.id);
+  Product.name = req.body.name;
+  Product.price = req.body.price;
+  Product.description = req.body.description;
+  await Product.save()
+  res.send(Product)
+})
+
+
+//this will make a new record
+
+router.post("/", async (req,res)=>{
+  let Product = new product;
+  Product.name = req.body.name;
+  Product.price = req.body.price;
+  Product.description = req.body.description;
+  await Product.save()
+  res.send(Product);
+
+})
 module.exports = router;
