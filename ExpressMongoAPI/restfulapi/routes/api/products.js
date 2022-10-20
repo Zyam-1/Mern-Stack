@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var product = require("../../model/productModel");
-
+var {product, validate} = require("../../model/productModel");
+var validateProd = require("../../middlewares/ValidateProd")
 
 
 // this will get the product
@@ -32,7 +32,7 @@ router.delete("/:id", async (req,res)=>{
 
 //this will update a single record
 
-router.put("/:id", async (req, res)=>{
+router.put("/:id",validateProd, async (req, res)=>{
   let Product = await product.findByIdAndUpdate(req.params.id);
   Product.name = req.body.name;
   Product.price = req.body.price;
@@ -44,10 +44,8 @@ router.put("/:id", async (req, res)=>{
 
 //this will make a new record
 
-router.post("/", async (req,res)=>{
-  
-
-   let Product = new product;
+router.post("/", validateProd,  async (req,res)=>{
+  let Product = new product;
   Product.name = req.body.name;
   Product.price = req.body.price;
   Product.description = req.body.description;

@@ -39,7 +39,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-mongoose.connect("mongodb://localhost/productscrud").then(()=>{
+mongoose.connect("mongodb://localhost/CRUD", {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  family: 4,
+}).then(()=>{
   console.log("Mongodb connected")
 }).catch("connection failed")
 
