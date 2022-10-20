@@ -1,12 +1,16 @@
 var express = require("express");
 var router = express.Router();
-var {product, validate} = require("../../model/productModel");
+var {product} = require("../../model/productModel");
 var validateProd = require("../../middlewares/ValidateProd")
 
 
 // this will get the product
 router.get("/", async (req, res) => {
-  let products = await product.find();
+  //this will make pagination
+  let page = Number(req.query.page ? req.query.page : 1);
+  let perPage = Number(req.query.perPage ? req.query.perPage : 10);
+  let skipRecords = perPage * (page - 1);
+  let products = await product.find().skip(skipRecords).limit(perPage);
   res.send(products);
 });
 
