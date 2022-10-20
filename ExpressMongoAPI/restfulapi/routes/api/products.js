@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var product = require("../../model/productModel");
 
+
+
 // this will get the product
 router.get("/", async (req, res) => {
   let products = await product.find();
@@ -43,7 +45,9 @@ router.put("/:id", async (req, res)=>{
 //this will make a new record
 
 router.post("/", async (req,res)=>{
-  let Product = new product;
+  
+
+   let Product = new product;
   Product.name = req.body.name;
   Product.price = req.body.price;
   Product.description = req.body.description;
