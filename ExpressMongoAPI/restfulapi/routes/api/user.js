@@ -5,7 +5,8 @@ var bcrypt = require("bcryptjs");
 const e = require("express");
 const _ = require("lodash");
 var jwt = require("jsonwebtoken");
-var config = require("config")
+var config = require("config");
+var {registerVal} = require("../../model/user");
 
 router.post("/register", async (req, res) => {
   let User = new user();
@@ -15,8 +16,14 @@ router.post("/register", async (req, res) => {
   User.role = req.body.role;
   let val = await user.findOne({ email: req.body.email });
   if (val) return res.send("Exists");
-  var salt = await bcrypt.genSalt(10);
-  User.password = await bcrypt.hash(User.password, salt);
+
+  let {error} = registerVal(req.body);
+  if(error) return res.send(error.details[0].message);
+
+
+  await User.generateHashedPassword();
+ 
+ 
   User.save();
   res.send(_.pick(User, ["email", "name"]));
 });

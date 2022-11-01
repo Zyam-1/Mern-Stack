@@ -8,9 +8,10 @@ var adminAuth = require("../../middlewares/admin");
 
 
 
+
 // this will get the product
-router.get("/", auth,adminAuth, async (req, res) => {
-  console.log(req.user)
+router.get("/", auth, adminAuth, async (req, res) => {
+  console.log(req.user);
   //this will make pagination
   let page = Number(req.query.page ? req.query.page : 1);
   let perPage = Number(req.query.perPage ? req.query.perPage : 10);
