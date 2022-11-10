@@ -1,0 +1,192 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+.img {
+  
+  width: 317px;
+  height: 317px;
+  background-image: url(https://th.bing.com/th/id/OIP.4kBOru082vTZ8FszJpcyhgHaJ7?pid=ImgDet&rs=1);
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  
+}
+
+.Container {
+  margin-left:50px;
+  width: 317px;
+  position: absolute;
+}
+
+
+
+.MainCont{
+  width: 317px;
+  height: 399px;
+  position: absolute;
+  background-color:#1A1B21 ;
+  
+}
+
+.MainCont > h3 {
+
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0;
+  margin-top: 15px;
+  
+}
+
+
+
+.front {
+  color: #F3BF99;
+  font-weight: 400;
+  font-size: 12.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 3px;
+
+}
+
+.web {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 10.24px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+
+
+.ParaCont {
+  background-color:#1A1B21 ;
+  color: white;
+  
+}
+
+.about {
+  width: 247px;
+  height: 201px;
+  margin-left: 35px;
+  
+}
+
+.about > h4 {
+  margin-block-end: -10px;
+}
+
+.interest > h4 {
+  margin-block-end: -10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.interest > p {
+  font-size: 10.24px;
+}
+
+.about > p {
+  font-size: 10.24px;
+  
+}
+.interest {
+  width: 247px;
+  height: 100px;
+  margin-top: -115px;
+  margin-left: 35px;
+  
+
+}
+
+button {
+  width: 115px;
+  height: 34px;
+  padding: 9px 13px 9px 11px;
+  
+
+}
+
+.btn-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn-cont > .EmailBtn {
+  border: 1px solid #D1D5DB;
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  
+}
+
+.btn-cont > .LinkedBtn {
+  border: 1px solid #5093E2;
+  font-size: 14px;
+  border-radius: 6px;
+  background: #5093E2;
+  color: white;
+  font-weight: bold;
+}
+button:hover {
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.footer {
+  position: relative;
+  width: 317px;
+  height: 50px;
+  bottom: -365px;
+  padding-top: 25px;
+  background-color: #161619;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  
+}
+
+.footer > i {
+  
+  
+  
+}
+
+.footer > button {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.footer > button > i {
+  flex-direction: column;
+  color: grey;
+  font-size: 25px;
+}
+
+
+
+
+
+
