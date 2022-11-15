@@ -9,13 +9,13 @@ import Card from 'react-bootstrap/Card';
 export default function Btn(){
     return (
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
+            <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.3eCqvdmaDa--iDYvxgL_pwHaD_?pid=ImgDet&rs=1"/>
+            <Card.Body className="card">
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                 Some quick example text to build on the card title and make up the
                 bulk of the card's content.
-                </Card.Text>
+                </Card.Text>                                                                    
                 <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
